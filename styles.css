@@ -232,6 +232,67 @@ nav {
     color: #b0c4de;
 }
 
+
+
+/* CONTENEDOR MODA */
+.moda-contenido {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+/* IMAGEN */
+.moda-img {
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+}
+
+.moda-img img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+    border: 1px solid #4fc3f7;
+    box-shadow: 0 0 20px rgba(79,195,247,0.3);
+    transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+/* ✨ EFECTO HOVER (AQUÍ ESTÁ LO PRO) */
+.moda-img:hover img {
+    transform: scale(1.08) rotate(1deg);
+    filter: brightness(1.1);
+}
+
+/* EFECTO GLOW */
+.moda-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(79,195,247,0.3);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.moda-img:hover::after {
+    opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .moda-contenido {
+        flex-direction: column;
+    }
+
+    .moda-img img {
+        max-width: 100%;
+    }
+}
+
+
+
+
 /* TIMELINE */
 .timeline {
     display: flex;
@@ -614,5 +675,101 @@ nav {
 
     .admin-img img {
         max-width: 100%;
+    }
+}
+
+
+
+
+.salario-box {
+    margin: 60px auto;
+    text-align: center;
+    padding: 25px;
+    max-width: 400px;
+    border: 1px solid #4fc3f7;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(79,195,247,0.2);
+}
+
+.salario-box h3 {
+    color: #4fc3f7;
+    margin-bottom: 10px;
+}
+
+.salario-box p {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.salario-box span {
+    font-size: 12px;
+    color: #ccc;
+}
+
+
+
+.separador-tech {
+    width: 80%;
+    height: 2px;
+    margin: 80px auto;
+    position: relative;
+    background: linear-gradient(90deg, transparent, #4fc3f7, transparent);
+}
+
+/* PUNTO CENTRAL */
+.separador-tech::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background: #4fc3f7;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px #4fc3f7;
+}
+
+
+/* BOTÓN FLOTANTE */
+#btnTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #4fc3f7;
+    color: #0a0f1c;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #4fc3f7;
+    display: none;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+/* HOVER */
+#btnTop:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #4fc3f7;
+}
+
+/* APARECER SUAVE */
+#btnTop.show {
+    display: block;
+    animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
