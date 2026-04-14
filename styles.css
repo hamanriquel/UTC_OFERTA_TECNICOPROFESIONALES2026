@@ -879,3 +879,83 @@ nav {
     font-size: 35px;
     cursor: pointer;
 }
+
+.index-hero{
+    height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+.index-overlay h1{
+    font-size: 3rem;
+    margin-bottom:10px;
+}
+
+.index-overlay p{
+    margin-bottom:40px;
+    opacity:0.8;
+}
+
+.grid-carreras{
+    display:grid;
+    grid-template-columns: repeat(2, 250px);
+    gap:30px;
+    justify-content:center;
+}
+
+.flip-card{
+    width:250px;
+    height:250px;
+    perspective:1000px;
+    cursor:pointer;
+}
+
+.flip-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner{
+    transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    border-radius:15px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.flip-front{
+    background:#111827;
+}
+
+.flip-front img{
+    width:100%;
+    height:70%;
+    object-fit:cover;
+}
+
+.flip-front h3{
+    margin-top:10px;
+}
+
+.flip-back{
+    background:#dc2626;
+    transform: rotateY(180deg);
+    padding:20px;
+    font-size:14px;
+}

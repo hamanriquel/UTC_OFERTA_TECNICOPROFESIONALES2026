@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educación y Empleo</title>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="hero">
+    <div class="contenido">
+        <h1>Educación y Empleo:</h1>
+        <h2>una trayectoria que te conecta</h2>
+        <p>Explora programas académicos y construye tu futuro profesional</p>
+    </div>
+</section>
+
+
+
+<div class="separador-tech"></div>
+
+<section class="index-hero">
+
+    <div class="index-overlay">
+        <h1>Explora tu futuro</h1>
+        <p>Selecciona tu programa técnico profesional</p>
+
+        <div class="grid-carreras">
+
+            <!-- CARD 1 -->
+            <div class="flip-card" onclick="window.open('cartpublicidad.html','_blank')">
+                <div class="flip-inner">
+
+                    <div class="flip-front">
+                        <img src="img/image3.jpg" alt="">
+                        <h3>Publicidad Digital</h3>
+                    </div>
+
+                    <div class="flip-back">
+                        <p>
+                            Crea campañas digitales, contenido y estrategias que conectan marcas con el mundo.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="flip-card" onclick="window.open('cartempresarial.html','_blank')">
+                <div class="flip-inner">
+
+                    <div class="flip-front">
+                        <img src="img/c_2.webp" alt="">
+                        <h3>Procesos Empresariales</h3>
+                    </div>
+
+                    <div class="flip-back">
+                        <p>
+                            Optimiza procesos, gestiona recursos y haz crecer cualquier negocio.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="flip-card" onclick="window.open('administracion.html','_blank')">
+                <div class="flip-inner">
+
+                    <div class="flip-front">
+                        <img src="img/procesos.webp" alt="">
+                        <h3>Procesos Administrativos</h3>
+                    </div>
+
+                    <div class="flip-back">
+                        <p>
+                            Lidera organizaciones y toma decisiones estratégicas con impacto.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="flip-card" onclick="window.open('mercadeo.html','_blank')">
+                <div class="flip-inner">
+
+                    <div class="flip-front">
+                        <img src="img/mercadeo.jpg" alt="">
+                        <h3>Mercadeo Digital</h3>
+                    </div>
+
+                    <div class="flip-back">
+                        <p>
+                            Analiza datos, entiende clientes y crea estrategias digitales efectivas.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+
+<canvas id="particles"></canvas>
+
+<script src="script.js"></script>
+<button id="btnTop">↑</button>
+
+<script>
+    const btnTop = document.getElementById("btnTop");
+
+    // Mostrar cuando haces scroll
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            btnTop.classList.add("show");
+        } else {
+            btnTop.classList.remove("show");
+        }
+    });
+
+    // Subir al inicio
+    btnTop.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+    const modal = document.getElementById("modalCarrusel");
+    const modalImg = document.getElementById("imgGrande");
+    const cerrar = document.querySelector("#modalCarrusel .cerrar");
+
+    const imagenes = document.querySelectorAll(".carrusel-item img");
+
+    imagenes.forEach(img => {
+        img.addEventListener("click", function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        });
+    });
+
+    cerrar.addEventListener("click", function(){
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(e){
+        if(e.target === modal){
+            modal.style.display = "none";
+        }
+    });
+
+});
+</script>
+</body>
+</html>
